@@ -19,7 +19,7 @@ mixer.music.play(-1)
 pygame.display.set_caption('Fire, Air, Earth, Water')
 
 #Instructions 
-#start_img = 
+start_img = pygame.image.load('start_img.png')
 #Elements Imagae
 fireIcon = pygame.image.load('02_Fire_Element.png')
 waterIcon = pygame.image.load('50_Water_Element.png')
@@ -38,13 +38,11 @@ start_game = False
 #Game Loop
 run = True
 while run:
-    screen.blit(background, (0,0))
-
     #if start_game == False:
         #Draw Menu
 
    
-        
+    screen.blit(background, (0,0))    
     fire_button.draw(screen)
     water_button.draw(screen)
     earth_button.draw(screen)
