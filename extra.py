@@ -27,3 +27,58 @@ class Game():
 
 
 
+choices = [fire, water, earth, air, cp_fire, cp_water, cp_earth, cp_air]
+
+class GameObject:
+    def __init__(self, x, y, image, scale):
+        width = image.get_width()
+        height = image.get_height()
+        self.image = pygame.transform.scale(image, (int(width * scale), int(height * scale)))
+        self.rect = self.image.get_rect()
+        self.rect.topleft = (x,y)
+    def draw_object(self):
+        self.rect = pygame.Surface.blit(self.image)
+
+#Declares Objects
+fire = GameObject(100, 100, fireElement, 3)
+water = GameObject(100, 100, waterElement, 3)
+earth = GameObject(100, 100, earthElement, 3)
+air = GameObject(100, 100, airElement, 3)
+
+cp_fire = GameObject(100, 100, fireElement, 3)
+cp_water = GameObject(100, 100, waterElement, 3)
+cp_earth = GameObject(100, 100, earthElement, 3)
+cp_air = GameObject(100, 100, airElement, 3)
+
+
+#Game Loop
+run = True
+while run:
+    
+   
+        
+        #Click Event
+    if event.type == pygame.MOUSEBUTTONDOWN:
+        mouse = pygame.mouse.get_pos()
+        if mouse[0] in range(250,350):
+            fire_button = True
+            
+        elif mouse[0] in range(350,450):
+            print("Water")
+        elif mouse[0] in range (450,550):
+            print("Earth")
+        else: 
+            mouse[0] in range(550,650)
+            print("Wind")
+
+       
+              
+   
+               
+
+     
+    
+  
+       
+Fire_Water_Wind_Earth()
+pygame.quit()
