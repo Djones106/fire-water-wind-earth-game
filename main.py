@@ -46,11 +46,66 @@ earth_button =button.Button(450, 450, earthIcon,2)
 air_button =button.Button(550, 450, airIcon, 2)
 
 #Define Game Variables
+
 pl_score = 0
 cp_score = 0
-i = 0 
-
+pl_choice = ''
+cp_choice = ''
+font = pygame.font.Font('Manokwary.ttf', 32)
 start_game = False    
+
+def Roll(cp_choice = ['Fire', 'Earth', 'Wind', 'Water']):
+    return random.choice(cp_choice)
+
+
+
+def Score(pl_choice, cp_choice):
+    if pl_choice == 'Fire' and cp_choice == 'Fire':
+        return 'Draw'
+    if pl_choice == 'Water' and cp_choice == 'Water':
+        return 'Draw'
+    if pl_choice == 'Wind' and cp_choice == 'Wind':
+        return 'Draw'
+    if pl_choice == 'Earth' and cp_choice == 'Earth':
+        return 'Draw'
+    if pl_choice == 'Fire' and cp_choice == 'Water':
+        return 'You Lose!'
+    if pl_choice == 'Fire' and cp_choice == 'Earth':
+        return 'You Win!'
+    if pl_choice == 'Fire' and cp_choice == 'Wind':
+        return 'Chaos!'
+    if pl_choice == 'Water' and cp_choice == 'Fire':
+        return 'You Win!'
+    if pl_choice == 'Water' and cp_choice == 'Earth':
+        return 'You Lose!'
+    if pl_choice == 'Water' and cp_choice == 'Wind':
+        return 'Chaos!'
+    if pl_choice == 'Wind' and cp_choice == 'Water':
+        return 'Chaos!'
+    if pl_choice == 'Wind' and cp_choice == 'Fire':
+        return 'Choas!'
+    if pl_choice == 'Wind' and cp_choice == 'Earth':
+        return 'You Lose!'
+    if pl_choice == 'Earth' and cp_choice == 'Fire':
+        return 'You Lose!'
+    if pl_choice == 'Earth' and cp_choice == 'Water':
+        return 'You Win!'
+    if pl_choice == 'Earth' and cp_choice == 'Wind':
+        return 'Chaos!'
+
+def Points(Score):
+    if Score == 'Chaos!':
+        pl_score =- 1
+        cp_score =- 1
+    elif Score == "You Win!":
+        pl_score =+ 1
+    elif Score == "You Lose!":
+        cp_score =+ 1
+
+def show_score(x,y):
+    score = font.render("Score : " + str(pl_score), True, (0,0,0))
+    screen.blit(score, (x,y))
+        
 
 #Game Loop
 run = True
@@ -68,6 +123,9 @@ while run:
             water_button.draw(screen)
             earth_button.draw(screen)
             air_button.draw(screen)
+            Roll()
+            Score(pl_choice,cp_choice)
+            Points(Score)
         if exit_button.draw(screen):
             run = False
 
@@ -86,9 +144,30 @@ while run:
                 if pygame.mouse.get_pressed()[0] == 1 and clicked == False:
                     clicked = True
                     action = True
-                print('fire')
-           
-        
+                pl_choice = 'Fire'
+                                    
+            if water_button.rect.collidepoint(clicked):
+                if pygame.mouse.get_pressed()[0] == 1 and clicked == False:
+                    clicked = True
+                    action = True
+                pl_choice = 'Water'
+                
+            if earth_button.rect.collidepoint(clicked):
+                if pygame.mouse.get_pressed()[0] == 1 and clicked == False:
+                    clicked = True
+                    action = True
+                pl_choice = 'Earth'
+                
+            if air_button.rect.collidepoint(clicked):
+                if pygame.mouse.get_pressed()[0] == 1 and clicked == False:
+                    clicked = True
+                    action = True
+                pl_choice = 'Wind'
+                
+
+            if exit_button.rect.collidepoint(clicked):
+                run = False 
+
     pygame.display.update()
 
 pygame.quit()

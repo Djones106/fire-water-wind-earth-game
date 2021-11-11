@@ -3,6 +3,7 @@ import pygame
 import random
 import math
 from pygame import mixer
+import button
 
 #iniating the game
 pygame.init()
@@ -21,7 +22,9 @@ mixer.music.play(-1)
 pygame.display.set_caption('Fire, Air, Earth, Water')
 
 #Elements
+
 fireIcon = pygame.image.load('05_Fire_III.png')
+
 
 fireX = 370
 fireY = 480
@@ -102,7 +105,7 @@ while run:
         if event.type == pygame.QUIT: #need to be in all caps
             run = False
         # if keystroke is pressed check wheter its right or left
-
+        
         if event.type == pygame.KEYDOWN:            
             if event.key == pygame.K_LEFT:
                 fireX_change = -3
