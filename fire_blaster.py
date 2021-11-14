@@ -3,7 +3,7 @@ import pygame
 import random
 import math
 from pygame import mixer
-import button
+
 
 #iniating the game
 pygame.init()
@@ -19,7 +19,7 @@ mixer.music.load('background.mp3')
 mixer.music.play(-1)
 
 #Title and Icon 
-pygame.display.set_caption('Fire, Air, Earth, Water')
+pygame.display.set_caption('Fire Blaster')
 
 #Elements
 
@@ -57,7 +57,7 @@ fireball_state = "ready"
 
 # Score
 score_value = 0
-font = pygame.font.Font('freesansbold.ttf', 32)
+font = pygame.font.Font('Manokwary.ttf', 32)
 
 textX = 10
 textY = 10
