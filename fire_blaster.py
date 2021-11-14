@@ -3,7 +3,7 @@ import pygame
 import random
 import math
 from pygame import mixer
-import button
+
 
 #iniating the game
 pygame.init()
@@ -12,18 +12,18 @@ pygame.init()
 screen = pygame.display.set_mode((800, 600))
 
 #background image
-background = pygame.image.load('background.png')
+background = pygame.image.load('img/background.png')
 
 #Background sound
 mixer.music.load('background.mp3')
 mixer.music.play(-1)
 
 #Title and Icon 
-pygame.display.set_caption('Fire, Air, Earth, Water')
+pygame.display.set_caption('Fire Blaster')
 
 #Elements
 
-fireIcon = pygame.image.load('05_Fire_III.png')
+fireIcon = pygame.image.load('img/05_Fire_III.png')
 
 
 fireX = 370
@@ -38,7 +38,7 @@ enemyY_change = []
 num_of_enemies = 6
 
 for i in range(num_of_enemies):
-    enemyImg.append(pygame.image.load('78_Darkness_Armor.png'))
+    enemyImg.append(pygame.image.load('img/78_Darkness_Armor.png'))
     enemyX.append(random.randint(0, 735))
     enemyY.append(random.randint(50, 150))
     enemyX_change.append(3)
@@ -47,7 +47,7 @@ for i in range(num_of_enemies):
 #Fireball
 #Ready - You can't see the fireball on the screen
 #Fire - The fireball is currently moving
-fireballImg = pygame.image.load('02_Fire_Element.png')
+fireballImg = pygame.image.load('img/02_Fire_Element.png')
 
 fireballX = 0
 fireballY = 480
@@ -57,7 +57,7 @@ fireball_state = "ready"
 
 # Score
 score_value = 0
-font = pygame.font.Font('freesansbold.ttf', 32)
+font = pygame.font.Font('Manokwary.ttf', 32)
 
 textX = 10
 textY = 10
@@ -133,7 +133,7 @@ while run:
     for i in range(num_of_enemies):
 
         #Game Over
-        if enemyY[i] > 440:
+        if enemyY[i] > 450:
             for i in range(num_of_enemies):
                 enemyY[i] = 2000
             game_over_text()

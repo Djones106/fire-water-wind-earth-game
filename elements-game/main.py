@@ -14,28 +14,28 @@ screen = pygame.display.set_mode((800, 600))
 pygame.display.set_caption('Fire, Water, Wind, Earth')
 
 #Instructions 
-start_background = pygame.image.load('start_img.png')
-start_img = pygame.image.load('startbtn.png')
-exit_img = pygame.image.load('exit.png')
+start_background = pygame.image.load('img/start_img.png')
+start_img = pygame.image.load('img/startbtn.png')
+exit_img = pygame.image.load('img/exit.png')
 
 #Game Background Image
-background = pygame.image.load('background.png')
+background = pygame.image.load('img/background.png')
 
 #Background Sound
 mixer.music.load('background.mp3')
 mixer.music.play(-1)
 
 #Elements Button Image
-fireIcon = pygame.image.load('02_Fire_Element.png')
-waterIcon = pygame.image.load('50_Water_Element.png')
-earthIcon = pygame.image.load('34_Earth_Element.png')
-airIcon = pygame.image.load('18_Air_Element.png')
+fireIcon = pygame.image.load('img/02_Fire_Element.png')
+waterIcon = pygame.image.load('img/50_Water_Element.png')
+earthIcon = pygame.image.load('img/34_Earth_Element.png')
+airIcon = pygame.image.load('img/18_Air_Element.png')
 
 #Element Choice Image
-fireElement = pygame.image.load('05_Fire_III.png')
-waterElement = pygame.image.load('53_Water_III.png')
-earthElement = pygame.image.load('37_Earth_III.png')
-airElement = pygame.image.load('21_Air_III.png')
+fireElement = pygame.image.load('img/05_Fire_III.png')
+waterElement = pygame.image.load('img/53_Water_III.png')
+earthElement = pygame.image.load('img/37_Earth_III.png')
+airElement = pygame.image.load('img/21_Air_III.png')
 
 #Create button instances
 start_button =button.Button(450,500, start_img, 1)
@@ -144,8 +144,9 @@ while run:
                 if pygame.mouse.get_pressed()[0] == 1 and clicked == False:
                     clicked = True
                     action = True
+                    pygame.draw.rect(fireElement, (100,100))
                 pl_choice = 'Fire'
-                                    
+                pygame.display.update()                    
             if water_button.rect.collidepoint(clicked):
                 if pygame.mouse.get_pressed()[0] == 1 and clicked == False:
                     clicked = True
