@@ -1,6 +1,6 @@
 # Fire Blaster
 
- In this pygame you will blast a fire ball at the Dark Knights. If they get to close its Game Over. 
+ In this pygame you will blast a fireballs at the Dark Knights. If they get to close its Game Over. 
 
 Icon attribute <div>Icons made by <a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp">Eucalyp</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 
