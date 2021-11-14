@@ -133,7 +133,7 @@ while run:
     for i in range(num_of_enemies):
 
         #Game Over
-        if enemyY[i] > 440:
+        if enemyY[i] > 450:
             for i in range(num_of_enemies):
                 enemyY[i] = 2000
             game_over_text()

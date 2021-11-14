@@ -144,8 +144,9 @@ while run:
                 if pygame.mouse.get_pressed()[0] == 1 and clicked == False:
                     clicked = True
                     action = True
+                    pygame.draw.rect(fireElement, (100,100))
                 pl_choice = 'Fire'
-                                    
+                pygame.display.update()                    
             if water_button.rect.collidepoint(clicked):
                 if pygame.mouse.get_pressed()[0] == 1 and clicked == False:
                     clicked = True
