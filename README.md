@@ -3,7 +3,7 @@
 ## In this pygame you will blast a fire ball at the Dark Knights. If they get to close its Game Over. 
 
 ## Installation: <break>
-    1. Install pygame 
+    1. Install pygame (instructions below)
     2. Run fire_blaster.py
 ## How to install Pygame - instructions from pygame.org/wiki/GettingStarted
 **The best way to install pygame is with the pip tool:**
