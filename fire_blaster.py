@@ -14,9 +14,9 @@ screen = pygame.display.set_mode((800, 600))
 #background image
 background = pygame.image.load('img/background.png')
 
-#Background sound
-mixer.music.load('background.mp3')
-mixer.music.play(-1)
+#Background sound - due to recent update background music breaks code
+#mixer.music.load('background.mp3')
+#mixer.music.play(-1)
 
 #Title and Icon 
 pygame.display.set_caption('Fire Blaster')
