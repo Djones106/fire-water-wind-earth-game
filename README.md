@@ -1,10 +1,10 @@
 # Fire Blaster
 
-## In this pygame you will blast a fire ball at the Dark Knights. If they get to close its Game Over. 
+## In this pygame you will blast a fire ball at the Dark Knights. If they get to close its Game Over. Use the spacebar to blast the Dark Knights and the arrow keys to move your hand. What will you highscore be?
 
 ## Installation: <break>
     1. Install pygame (instructions below)
-    2. Run fire_blaster.py
+    2. Run  - python3 fire_blaster.py
 ## How to install Pygame - instructions from pygame.org/wiki/GettingStarted
 **The best way to install pygame is with the pip tool:**
    - For Windows: python3 -m pip install -U pygame --user
